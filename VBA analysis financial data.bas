@@ -10,6 +10,7 @@ Sub StockPerformance()
     Dim OpenPrice As Double
     Dim YearChange As Double
     Dim PercentChange As Double
+    Dim LastRow As Long
     Dim i As Long
     
     'Set starting values of variables
@@ -27,13 +28,13 @@ Sub StockPerformance()
     Range("K1").Value = "Percent Change"
     Range("L1").Value = "Total Stock Volume"
 
+    'Find last row in sheet
+    LastRow = Cells(Rows.Count, 1).End(xlUp).Row
+
+
     'Ticker and total stock volume steps
     
-    ' Loop through rows in the column  (NEED TO USE LAST ROW - THIS MUST CHANGE)
-    'Hard coding last row of column A in testing data for now (will change so can find last row in sheet)
-    For i = 2 To 70926
-
-        
+    For i = 2 To LastRow
 
     ' Searches for when the value of the next cell is different than that of the current cell
         If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
@@ -50,7 +51,18 @@ Sub StockPerformance()
         
             Range("J" & TickerSummaryRow).Value = YearChange  ' puts difference of close price at last row with open price of first row into J
             
+            
+            'conditional to change formatting fill color for yearly change to red if negative, green if positive
+                If Range("J" & TickerSummaryRow).Value < 1 Then
+                    Range("J" & TickerSummaryRow).Interior.ColorIndex = 3  'red
+                Else
+                    Range("J" & TickerSummaryRow).Interior.ColorIndex = 4  'green
+                End If
+                
+            
             Range("K" & TickerSummaryRow).Value = PercentChange ' Puts difference of close price and open price divided by open price into K
+            
+            Range("K" & TickerSummaryRow).NumberFormat = "0.00%"  'Change formatting of value in column K to percentage
         
             Range("L" & TickerSummaryRow).Value = TotalStock  ' puts sum of stock vlumn into column L
             
@@ -67,14 +79,9 @@ Sub StockPerformance()
         End If
     
     Next i
-    
-    
-    'Formatting Changes
-    
-    'NOTE WILL NEED TO MAKE COLUMN K INTO PERCENT DATA TYPE
+
     
     'Adjust width of columns to match contents of cells for readability
-    
     Columns("I:L").AutoFit
 
 
