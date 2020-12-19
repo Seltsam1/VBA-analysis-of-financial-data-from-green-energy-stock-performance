@@ -75,7 +75,7 @@ Sub StockPerformanceBonus()
             
             
             'conditional to change formatting fill color for yearly change to red if negative, green if positive
-                    If ws.Range("J" & TickerSummaryRow).Value < 1 Then
+                    If ws.Range("J" & TickerSummaryRow).Value < 0 Then
                         ws.Range("J" & TickerSummaryRow).Interior.ColorIndex = 3  'red
                     Else
                         ws.Range("J" & TickerSummaryRow).Interior.ColorIndex = 4  'green
