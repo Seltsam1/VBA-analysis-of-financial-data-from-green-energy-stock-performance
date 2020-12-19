@@ -6,6 +6,8 @@ Analysis of financial data from green energy stock performance using VBA and Exc
 
 Import file "VBA analysis financial data.bas" into Excel project
 
+Example Output are screen shots showing data set up and result of running VBA script
+
 
 ## Features
 
