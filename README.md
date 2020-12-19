@@ -13,6 +13,7 @@ VBA script does the following:
 
 Loops through data to creates a summary table in columns I through J including headers
 Ticker symbol into column I
+Yearly Change (difference of openening price at beginning of year to closing price at end of year) into column J
 Total Stock Volume (sum of volume per ticker symbol) into column L
 
 
