@@ -17,7 +17,9 @@ VBA script does the following:
 
 - Yearly Change (difference of openening price at beginning of year to closing price at end of year) into column J
 
-- Percent Change from opening price to closing price into cloumn K
+- Conditional formatting based on value of Yearly Change (red for negative, green for positive)
+
+- Percent Change from opening price to closing price into cloumn K (change format to percentage)
 
 - Total Stock Volume (sum of volume per ticker symbol) into column L
 
