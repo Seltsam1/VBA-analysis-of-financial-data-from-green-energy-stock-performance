@@ -9,7 +9,8 @@ Import file "VBA analysis financial data.bas" into Excel project
 Example Output are screen shots showing data set up and result of running VBA script
 
 
-Note - there is an additonal "VBA analysis financial data bonus.bas" script that is includes the above and additional analyses for greatest % increase, greatest % decrease, and greatest total volume
+Note - there is an additonal "VBA analysis financial data bonus.bas" script that is includes the above and additional analyses for greatest % increase, greatest % decrease, and greatest total volume. Will also reiterate through each sheet in Excel file
+
 
 ## Features
 
