@@ -28,6 +28,10 @@ VBA script does the following:
 - Total Stock Volume (sum of volume per ticker symbol) into column L
 
 
+## Other Comments
+
+Screen shots are provided for sample output. Three files are for the base VBA script. Three additional files for the advanced VBA script.
+
 ## Licensing
 
 The code in this project is licensed under MIT license.
