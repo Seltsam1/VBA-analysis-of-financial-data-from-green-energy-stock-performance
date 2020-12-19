@@ -9,12 +9,14 @@ Sub StockPerformance()
     Dim TotalStock As Double
     Dim OpenPrice As Double
     Dim YearChange As Double
+    Dim PercentChange As Double
     Dim i As Long
     
     'Set starting values of variables
     TickerSummaryRow = 2
     TotalStock = 0
     YearChange = 0
+    PercentChange = 0
     OpenPrice = Cells(2, 3).Value
     
 
@@ -42,11 +44,13 @@ Sub StockPerformance()
             
             YearChange = (Cells(i, 6).Value - OpenPrice)    ' Store yearly change value
             
-            MsgBox (YearChange)
+            PercentChange = ((Cells(i, 6).Value - OpenPrice) / OpenPrice)
         
             Range("I" & TickerSummaryRow).Value = TickerName  ' Puts string of ticker into first available row in column I
         
-            Range("J" & TickerSummaryRow).Value = YearChange  ' puts difference of close price at last row with open price of first row
+            Range("J" & TickerSummaryRow).Value = YearChange  ' puts difference of close price at last row with open price of first row into J
+            
+            Range("K" & TickerSummaryRow).Value = PercentChange ' Puts difference of close price and open price divided by open price into K
         
             Range("L" & TickerSummaryRow).Value = TotalStock  ' puts sum of stock vlumn into column L
             
@@ -64,6 +68,10 @@ Sub StockPerformance()
     
     Next i
     
+    
+    'Formatting Changes
+    
+    'NOTE WILL NEED TO MAKE COLUMN K INTO PERCENT DATA TYPE
     
     'Adjust width of columns to match contents of cells for readability
     
