@@ -45,7 +45,11 @@ Sub StockPerformance()
             
             YearChange = (Cells(i, 6).Value - OpenPrice)    ' Store yearly change value
             
-            PercentChange = ((Cells(i, 6).Value - OpenPrice) / OpenPrice)
+                If OpenPrice <> 0 Then 'Error on full data where divided by zero, added this in to address problem
+                    PercentChange = ((Cells(i, 6).Value - OpenPrice) / OpenPrice)
+                Else
+                    PercentChange = Cells(i, 6).Value
+                End If
         
             Range("I" & TickerSummaryRow).Value = TickerName  ' Puts string of ticker into first available row in column I
         
